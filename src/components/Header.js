@@ -3,13 +3,13 @@ import Button from "./Button.js"
 
 const Header = (props) => {
 
-    const {title, onAdd} = props;
+    const {title, onAdd, showAdd} = props;
     
     
     return (
         <header className="header">
             <h1>{title}</h1>
-           <Button color="green" text='Add Task' onAdd={onAdd}/>
+           <Button color={showAdd ? "red" : "green"} text={ showAdd ? 'Close Task' : 'Open Task'} onAdd={onAdd}/>
         </header>
     )
 }
