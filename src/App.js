@@ -11,18 +11,27 @@ function App() {
     {
         id: 1,
         text: 'code',
+        day: "Jan 5th at 2pm",
         reminder: true
 },
 {
     id: 2,
     text: 'watch anime',
+    day: "march 13th at 1:30pm",
     reminder: false
 },
 {
     id: 3,
     text: 'code sum mo',
+    day: "July 17th at 10am",
     reminder: true
 }])
+
+// * This below is for deleting task 
+
+const deleteTask = (id) => {
+  console.log('delete', id)
+}
 
   return (
     <div className="container">
