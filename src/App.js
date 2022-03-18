@@ -8,6 +8,15 @@ import AddTask from "./components/AddTask.js"
 function App() {
   const areYouCool = true;
 
+ 
+  const [showAddTask, setShowAddTask] = React.useState(true)
+
+
+
+
+
+
+
 // ! This state is temorary, I will be changing it when I hook up a back-end
   const [tasks, setTasks] = React.useState([
     {
@@ -55,8 +64,8 @@ const toggleReminder = (id) => {
 
   return (
     <div className="container">
-     <Header title={ areYouCool ? 'Welcome to the Task Tracker App' : 'You suck, get off my app!!' } />
-     <AddTask onAdd={addTask} />
+     <Header onAdd={() => setShowAddTask(!showAddTask)} title={ areYouCool ? 'Welcome to the Task Tracker App' : 'You suck, get off my app!!' } />
+     { showAddTask && <AddTask onAdd={addTask} />}
      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task to Show'}
     </div>
   );

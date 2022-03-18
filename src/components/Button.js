@@ -3,13 +3,11 @@ import React from 'react';
 
 const Button = (props) => {
 
-function onClick() {
-    
-}
+    const {onAdd} = props;
 
     return (
         <div>
-             <button onClick={onClick} style={{backgroundColor: props.color}} className='btn'>{props.text}</button>
+             <button onClick={onAdd} style={{backgroundColor: props.color}} className='btn'>{props.text}</button>
         </div>
     )
 }
