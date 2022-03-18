@@ -7,6 +7,7 @@ import Tasks from "./components/Tasks.js"
 function App() {
   const areYouCool = true;
 
+// ! This state is temorary, I will be changing it when I hook up a back-end
   const [tasks, setTasks] = React.useState([
     {
         id: 1,
@@ -33,10 +34,16 @@ const deleteTask = (id) => {
   setTasks(tasks.filter(task => task.id !== id))
 }
 
+// *THis below is for toggle reminder
+
+const toggleReminder = (id) => {
+  setTasks(tasks.map(task => task.id === id ? {...task, reminder: !task.reminder} : task))
+}
+
   return (
     <div className="container">
      <Header title={ areYouCool ? 'Welcome to the Task Tracker App' : 'You suck, get off my app!!' } />
-     <Tasks tasks={tasks} onDelete={deleteTask}/>
+     {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task to Show'}
     </div>
   );
 }

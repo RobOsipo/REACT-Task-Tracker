@@ -3,14 +3,14 @@ import Task from "./Task.js"
 
 const Tasks = (props) => {
 
-    const { tasks, onDelete } = props;
+    const { tasks, onDelete, onToggle } = props;
 
 
 
     return (
         <div>
         {tasks.map((task) => {
-            return <Task key={task.id} task={task} onDelete={onDelete} />
+            return <Task key={task.id} task={task} onDelete={onDelete} onToggle={onToggle} />
         })}
         </div>
     )
