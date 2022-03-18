@@ -2,9 +2,14 @@ import React from 'react';
 
 
 const Button = (props) => {
+
+function onClick() {
+    
+}
+
     return (
         <div>
-             <button style={{backgroundColor: props.color}} className='btn'>{props.text}</button>
+             <button onClick={onClick} style={{backgroundColor: props.color}} className='btn'>{props.text}</button>
         </div>
     )
 }
