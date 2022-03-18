@@ -32,7 +32,11 @@ function App() {
 // * This below is for the add task functionality
 
 const addTask = (task) => {
-  console.log(task)
+  const id = Math.floor(Math.random() * 10000) + 1;
+
+  const newTask = { id, ...task}
+
+  setTasks([...tasks, newTask]);
 }
 
 // * This below is for deletetask functionality
