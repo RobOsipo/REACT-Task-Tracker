@@ -30,13 +30,13 @@ function App() {
 // * This below is for deleting task 
 
 const deleteTask = (id) => {
-  console.log('delete', id)
+  setTasks(tasks.filter(task => task.id !== id))
 }
 
   return (
     <div className="container">
      <Header title={ areYouCool ? 'Welcome to the Task Tracker App' : 'You suck, get off my app!!' } />
-     <Tasks tasks={tasks}/>
+     <Tasks tasks={tasks} onDelete={deleteTask}/>
     </div>
   );
 }

@@ -3,23 +3,23 @@ import Task from "./Task.js"
 
 const Tasks = (props) => {
 
-    const {tasks} = props;
-
-
-// * my comments are green here 
-// ! jsbfjsf
-// TODO: adgdsgf
-// ? fajbfas
+    const { tasks, onDelete } = props;
 
 
 
     return (
         <div>
         {tasks.map((task) => {
-            return <Task key={task.id} task={task} />
+            return <Task key={task.id} task={task} onDelete={onDelete} />
         })}
         </div>
     )
 }
 
 export default Tasks;
+
+
+// * my comments are green here 
+// ! jsbfjsf
+// TODO: adgdsgf
+// ? fajbfas
