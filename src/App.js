@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header.js"
 import Tasks from "./components/Tasks.js"
+import AddTask from "./components/AddTask.js"
 
 // import './App.css';
 
@@ -43,6 +44,7 @@ const toggleReminder = (id) => {
   return (
     <div className="container">
      <Header title={ areYouCool ? 'Welcome to the Task Tracker App' : 'You suck, get off my app!!' } />
+     <AddTask />
      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task to Show'}
     </div>
   );
