@@ -29,22 +29,30 @@ function App() {
     reminder: true
 }])
 
-// * This below is for deleting task 
+// * This below is for the add task functionality
+
+const addTask = (task) => {
+  console.log(task)
+}
+
+// * This below is for deletetask functionality
 
 const deleteTask = (id) => {
   setTasks(tasks.filter(task => task.id !== id))
 }
 
-// *THis below is for toggle reminder
+// * This below is for toggle reminder functionality
 
 const toggleReminder = (id) => {
   setTasks(tasks.map(task => task.id === id ? {...task, reminder: !task.reminder} : task))
 }
 
+
+
   return (
     <div className="container">
      <Header title={ areYouCool ? 'Welcome to the Task Tracker App' : 'You suck, get off my app!!' } />
-     <AddTask />
+     <AddTask onAdd={addTask} />
      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task to Show'}
     </div>
   );
